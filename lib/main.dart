@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pdpui2/second_page.dart';
 
+import 'choosed_page.dart';
+import 'favorite_page.dart';
 import 'home_page.dart';
 
 void main() {
@@ -14,7 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: FavoritePage(),
+      routes: {
+        HomePage.id: (context) => const HomePage(),
+        SecondPage.id: (context) => const SecondPage(),
+        FavoritePage.id: (context) => FavoritePage(),
+        ChoosedPage.id: (context) => const ChoosedPage(),
+      },
     );
   }
 }

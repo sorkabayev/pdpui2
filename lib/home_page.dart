@@ -12,18 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Item> _listItem = [
-    Item("asset/images/air.jpg"),
-    Item("asset/images/air-2.jpg"),
-    Item("asset/images/s10.jpg"),
-    Item("asset/images/s10.jpg"),
-    Item("asset/images/tv.jpg"),
-    Item("asset/images/tv.jpg"),
-    Item("asset/images/tv2.jpg"),
-    Item("asset/images/xolo.jpg"),
-    Item("asset/images/xolo.jpg"),
-    Item("asset/images/xolo2.jpg"),
-  ];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
+                    const Text(
                       "Lifestyle",
                       style: TextStyle(color: Colors.white, fontSize: 35),
                     ),
@@ -105,8 +95,8 @@ class _HomePageState extends State<HomePage> {
               child: GridView.count(
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                crossAxisCount: 1,
-                children: _listItem.map((e) => cellOfList(e)).toList(),
+                crossAxisCount: 2,
+                children: ItemList.listItem.map((e) => cellOfList(e)).toList(),
               ),
             ),
           ],
@@ -138,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                 });
               },
 
-              icon: e.icon ? Icon(Icons.favorite, color: Colors.red,) : Icon(Icons.favorite_border),
+              icon: e.icon ? const Icon(Icons.favorite, color: Colors.red,) : const Icon(Icons.favorite_border),
             )
           ],
         ),
